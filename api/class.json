@@ -1,0 +1,77 @@
+{
+  "code": 0,
+  "msg": "",
+  "count": 100,
+  "data": [
+    {
+      "time": "2024-07-18 11:17:06",
+      "program": "创新驱动",
+      "mainname": "李亮",
+      "people": "王冕",
+      "place": "太原科技大学",
+      "sort": "线下",
+      "score": "3.0",
+      "total": "50"
+    },
+    {
+      "time": "2024-07-04 16:00:00",
+      "program": "科技智慧",
+      "mainname": "王思佳",
+      "people": "张丽丽",
+      "place": "中北大学",
+      "sort": "直播",
+      "score": "1.0",
+      "total": "30"
+    },
+    {
+      "time": "2024-07-08 18:00:00",
+      "program": "科技无线",
+      "mainname": "张世杰",
+      "people": "邓十",
+      "place": "中北大学",
+      "sort": "录播",
+      "score": "1.0",
+      "total": "100"
+    },
+    {
+      "time": "2024-07-10 12:00:00",
+      "program": "创新学习指导",
+      "mainname": "华飒",
+      "people": "李杰",
+      "place": "山西传媒学院",
+      "sort": "线下",
+      "score": "3.0",
+      "total": "30"
+    },
+    {
+      "time": "2024-07-11 08:00:00",
+      "program": "扩展职业领域",
+      "mainname": "张业",
+      "people": "高科",
+      "place": "太原学院",
+      "sort": "线下",
+      "score": "1.0",
+      "total": "150"
+    },
+    {
+      "time": "2024-07-15 08:00:00",
+      "program": "职业规划",
+      "mainname": "李治",
+      "people": "何畅",
+      "place": "太原工业学院",
+      "sort": "录播",
+      "score": "1.0",
+      "total": "100"
+    },
+    {
+      "time": "2024-07-17 18:00:00",
+      "program": "大学生就业指导",
+      "mainname": "王欣欣",
+      "people": "李翠翠",
+      "place": "中北大学",
+      "sort": "直播",
+      "score": "1.5",
+      "total": "50"
+    }
+  ]
+}

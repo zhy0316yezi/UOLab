@@ -1,0 +1,60 @@
+{
+  "code": 0,
+  "msg": "",
+  "count": 100,
+  "data": [
+    {
+      "sort": "学术科技类",
+      "year": "2022",
+      "topic": "互联网+",
+      "leader": "张叶子",
+      "member": "张鱼，李四",
+      "level": "特等",
+      "teacher": "高卅"
+    },
+    {
+      "sort": "英语类",
+      "year": "2022",
+      "topic": "国才杯比赛",
+      "leader": "王丽",
+      "member": "王文如，吴海峰",
+      "level": "一等",
+      "teacher": "邓为"
+    },
+    {
+      "sort": "学术科技类",
+      "year": "2024",
+      "topic": "挑战杯",
+      "leader": "涂山璟",
+      "member": "苍玄，丰隆，肖遥",
+      "level": "优秀奖",
+      "teacher": "黄玫瑰"
+    },
+    {
+      "sort": "创新创业类",
+      "year": "2023",
+      "topic": "全国大学生创新创业大赛",
+      "leader": "檀健次",
+      "member": "白敬亭，李贤",
+      "level": "一等",
+      "teacher": "王朔"
+    },
+    {"sort": "其他类",
+      "year": "2024",
+      "topic": "全国大学生电子设计竞赛",
+      "leader": "黄子韬",
+      "member": "权志龙，薛之谦",
+      "level": "二等",
+      "teacher": "张淑娟"
+    },
+    {
+      "sort": "英语类",
+      "year": "2021",
+      "topic": "全国搞笑创新英语阅读赛",
+      "leader": "张梅",
+      "member": "杜帅",
+      "level": "三等",
+      "teacher": "王菲"
+    }
+  ]
+}

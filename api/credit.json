@@ -1,0 +1,104 @@
+{
+  "code": 0,
+  "msg": "",
+  "count": 100,
+  "data": [
+    {
+      "studentId": "2213042803",
+      "studentname": "张叶子",
+      "grade": "2022",
+      "class": "校内公开课",
+      "score": "0.2"
+    },{
+    "studentId": "2213042803",
+    "studentname": "张叶子",
+    "grade": "2022",
+    "class": "校内公开课",
+    "score": "0.3"
+    },
+    {
+      "studentId": "2213042803",
+      "studentname": "张叶子",
+      "grade": "2022",
+      "class": "国家精品公开课",
+      "score": "0.1"
+    },
+    {
+      "studentId": "2213042803",
+      "studentname": "张叶子",
+      "grade": "2022",
+      "class": "企业公开课",
+      "score": "0.5"
+    },
+    {
+      "studentId": "2213042803",
+      "studentname": "张叶子",
+      "grade": "2022",
+      "class": "企业公开课",
+      "score": "0.2"
+    },
+    {
+      "studentId": "2213042803",
+      "studentname": "张叶子",
+      "grade": "2022",
+      "class": "校内公开课",
+      "score": "0.1"
+    },
+    {
+      "studentId": "2213042803",
+      "studentname": "张叶子",
+      "grade": "2022",
+      "class": "企业公开课",
+      "score": "0.1"
+    },{
+      "studentId": "2213042845",
+      "studentname": "张鱼",
+      "grade": "2022",
+      "class": "国家精品公开课",
+      "score": "0.3"
+    },
+    {
+      "studentId": "2213042845",
+      "studentname": "张鱼",
+      "grade": "2022",
+      "class": "企业公开课",
+      "score": "0.4"
+    },
+    {
+      "studentId": "2213042845",
+      "studentname": "张鱼",
+      "grade": "2022",
+      "class": "企业公开课",
+      "score": "0.1"
+    },
+    {
+      "studentId": "2213042845",
+      "studentname": "张鱼",
+      "grade": "2022",
+      "class": "校内公开课",
+      "score": "0.1"
+    },
+    {
+      "studentId": "2213042840",
+      "studentname": "王娟娟",
+      "grade": "2022",
+      "class": "国家精品公开课",
+      "score": "0.5"
+    },
+    {
+      "studentId": "2213042840",
+      "studentname": "王娟娟",
+      "grade": "2022",
+      "class": "企业公开课",
+      "score": "0.4"
+    },
+    {
+      "studentId": "2213042840",
+      "studentname": "王娟娟",
+      "grade": "2022",
+      "class": "企业公开课",
+      "score": "0.3"
+    }
+
+  ]
+}

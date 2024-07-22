@@ -1,0 +1,77 @@
+{
+  "code": 0,
+  "msg": "",
+  "count": 100,
+  "data": [
+    {
+      "id": 10001,
+      "membername": "张三",
+      "grade": "2022",
+      "phone": "13454567873",
+      "college": "太原科技大学",
+      "major": "计算机科学与技术",
+      "state": "毕业",
+      "work": "是"
+    },
+    {
+      "id": 10002,
+      "membername": "李四",
+      "grade": "2022",
+      "phone": "13454567873",
+      "college": "中北大学",
+      "major": "软件工程",
+      "state": "正常",
+      "work": "否"
+    },
+    {
+      "id": 10003,
+      "membername": "叶子",
+      "grade": "2022",
+      "phone": "13454567873",
+      "college": "太原科技大学",
+      "major": "计算机科学与技术",
+      "state": "正常",
+      "work": "是"
+    },
+    {
+      "id": 10004,
+      "membername": "张三",
+      "grade": "2022",
+      "phone": "13454567873",
+      "college": "太原科技大学",
+      "major": "计算机科学与技术",
+      "state": "退出",
+      "work": "是"
+    },
+    {
+      "id": 10005,
+      "membername": "叶子",
+      "grade": "2022",
+      "phone": "13454567873",
+      "college": "太原科技大学",
+      "major": "计算机科学与技术",
+      "state": "正常",
+      "work": "是"
+    },
+    {
+      "id": 10006,
+      "membername": "叶子",
+      "grade": "2022",
+      "phone": "13454567873",
+      "college": "太原科技大学",
+      "major": "计算机科学与技术",
+      "state": "正常",
+      "work": "是"
+    },
+    {
+      "id": 10007,
+      "membername": "叶子",
+      "grade": "2022",
+      "phone": "13454567873",
+      "college": "太原科技大学",
+      "major": "计算机科学与技术",
+      "state": "正常",
+      "work": "是"
+    }
+  ]
+}
