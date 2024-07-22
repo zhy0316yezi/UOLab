@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>首页三</title>
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="stylesheet" href="../../lib/layui-v2.6.3/css/layui.css" media="all">
+  <link rel="stylesheet" href="../../lib/font-awesome-4.7.0/css/font-awesome.min.css" media="all">
+  <link rel="stylesheet" href="../../css/public.css" media="all">
+<!--  引入echarts库文件-->
+  <script src="../../js/lay-module/echarts/echarts.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../../js/lay-module/echarts/echartsTheme.js" type="text/javascript" charset="utf-8"></script>
+  <style>
+    .top-panel {
+      border: 1px solid #eceff9;
+      border-radius: 5px;
+      text-align: center;
+    }
+    .top-panel > .layui-card-body{
+      height: 60px;
+    }
+    .top-panel-number{
+      line-height:60px;
+      font-size: 30px;
+      border-right:1px solid #eceff9;
+    }
+    .top-panel-tips{
+      line-height:30px;
+      font-size: 12px
+    }
+  </style>
+</head>
+<body>
+<div class="layuimini-container">
+    <div class="layuimini-main">
+      <fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
+        <legend>成员统计</legend>
+      </fieldset>
+      <div class="layui-form"  style="margin: 10px 10px 10px 10px">
+        <form class="layui-form layui-form-pane" action="">
+          <div class="layui-form-item">
+            <div class="layui-inline">
+              <label class="layui-form-label">院系</label>
+              <div class="layui-input-inline">
+                <select name="college" lay-filter="college">
+                  <option value="">--请选择院系--</option>
+                  <option value="0">中北大学</option>
+                  <option value="1">太原科技大学</option>
+                  <option value="2">太原工业学院</option>
+                </select>
+              </div>
+            </div>
+            <div class="layui-inline">
+              <label class="layui-form-label">专业</label>
+              <div class="layui-input-inline">
+                <select name="major" lay-filter="major">
+                  <option value="">--请选择专业--</option>
+                  <option value="0">计算机科学与技术</option>
+                  <option value="1">软件工程</option>
+                  <option value="2">电子信息技术</option>
+                </select>
+              </div>
+            </div>
+            <div class="layui-inline">
+              <label class="layui-form-label">年级</label>
+              <div class="layui-input-inline">
+                <input id="grade" type="text" name="grade"  placeholder="请输入年级" value="" class="layui-input">
+              </div>
+            </div>
+            <div class="layui-inline">
+              <label class="layui-form-label">状态</label>
+              <div class="layui-input-inline">
+                <select name="status" lay-filter="status">
+                  <option value="">--请选择状态--</option>
+                  <option value="0">正常</option>
+                  <option value="1">退出</option>
+                  <option value="2">毕业</option>
+                </select>
+              </div>
+            </div>
+            <div class="layui-inline">
+              <button type="submit" class="layui-btn "  lay-submit lay-filter="data-search-btn"><i class="layui-icon layui-icon-search"> </i> 搜 索</button>
+              <button type="reset" class="layui-btn layui-btn-primary" ><i class="layui-icon layui-icon-refresh"></i> 重置</button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="layui-row layui-col-space15">
+        <div class="layui-col-md12">
+          <div class="layui-card-body">
+            <div class="layui-row layui-col-space15">
+              <div class="layui-col-xs12 layui-col-md6">
+               <div class="layui-card" style="box-shadow: 0px 0px 10px 3px gainsboro;border-radius: 20px">
+             <div class="layui-card-header" style="font-weight: bold;font-size: 18px">成员人数统计</div>
+             <div class="layui-card-body">
+               <div id="echarts-dataset" style="background-color:#ffffff;min-height:300px;padding: 10px"></div>
+            </div>
+              </div>
+              </div>
+              <div class="layui-col-xs12 layui-col-md6">
+                <div class="layui-card" style="box-shadow: 0px 0px 10px 3px gainsboro;border-radius: 20px">
+                <div class="layui-card-header" style="font-weight: bold;font-size: 18px">学员情况统计</div>
+                <div class="layui-card-body">
+                  <div id="echarts-map" style="background-color:#ffffff;min-height:300px;padding: 10px"></div>
+                </div>
+              </div>
+              </div>
+            </div>
+          </div>
+      </div>
+      </div>
+
+      <!--图表-->
+      <div style="padding:20px;">
+        <div class="layui-row layui-col-space15">
+          <div class="layui-card" style="border-radius: 20px; border: 2px solid buttonface; box-shadow: 0px 0px 10px 3px gainsboro;">
+            <div class="layui-card-header" style="font-weight: bold; font-size: 18px;">各专业成员人数比较</div>
+            <div class="layui-card-body">
+              <div id="histogrammajor" style="width: 100%; height: 400px;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+</div>
+</div>
+<script src="../../lib/layui-v2.6.3/layui.js" charset="utf-8"></script>
+<script src="../../js/lay-config.js?v=1.0.4" charset="utf-8"></script>
+<script>
+  layui.use(['layer', 'echarts'], function () {
+    var $ = layui.jquery,
+            layer = layui.layer,
+            laydate=layui.laydate,
+            echarts = layui.echarts;
+
+    // 年选择器
+    laydate.render({
+      elem: '#grade',
+      type: 'year'
+    });
+
+    //环形图，成员人数统计
+    var chartDom = document.getElementById('echarts-dataset');
+    var myChart = echarts.init(chartDom);
+    var option;
+
+    option = {
+      tooltip: {
+        trigger: 'item'
+      },
+      legend: {
+        top: '5%',
+        left: 'center'
+      },
+      series: [
+        {
+          name: 'Access From',
+          type: 'pie',
+          radius: ['40%', '70%'],
+          avoidLabelOverlap: false,
+          itemStyle: {
+            borderRadius: 10,
+            borderColor: '#fff',
+            borderWidth: 2
+          },
+          label: {
+            show: false,
+            position: 'center'
+          },
+          emphasis: {
+            label: {
+              show: true,
+              fontSize: 40,
+              fontWeight: 'bold'
+            }
+          },
+          labelLine: {
+            show: false
+          },
+          data: [
+            { value: 1048, name: '大一' },
+            { value: 735, name: '大二' },
+            { value: 580, name: '大三' },
+            { value: 484, name: '大四' },
+            { value: 300, name: '毕业' }
+          ]
+        }
+      ]
+    };
+
+    option && myChart.setOption(option);
+
+    //学院统计情况饼状图
+    var chartDom2 = document.getElementById('echarts-map');
+    var myChart2 = echarts.init(chartDom2);
+    var option2;
+
+    option2 = {
+      title: {
+        text: '学院统计',
+        left: 'center'
+      },
+      tooltip: {
+        trigger: 'item'
+      },
+      legend: {
+        orient: 'vertical',
+        left: 'left'
+      },
+      series: [
+        {
+          name: 'Access From',
+          type: 'pie',
+          radius: '50%',
+          data: [
+            { value: 1048, name: '中北大学' },
+            { value: 735, name: '太原科技大学' },
+            { value: 580, name: '太原工业学院' },
+            { value: 484, name: '太原理工大学' },
+            { value: 300, name: '太原学院' }
+          ],
+          emphasis: {
+            itemStyle: {
+              shadowBlur: 10,
+              shadowOffsetX: 0,
+              shadowColor: 'rgba(0, 0, 0, 0.5)'
+            }
+          },
+
+        }
+      ]
+    };
+
+    option2 && myChart2.setOption(option2);
+
+
+    //3.
+    var chartDom3 = document.getElementById('histogrammajor');
+    var myChart3 = echarts.init(chartDom3);
+    var option3;
+
+    option3 = {
+      tooltip: {
+        trigger: 'axis',
+        axisPointer: {
+          type: 'cross',
+          crossStyle: {
+            color: '#999'
+          }
+        }
+      },
+      toolbox: {
+        feature: {
+          dataView: { show: true, readOnly: false },
+          magicType: { show: true, type: ['line', 'bar'] },
+          restore: { show: true },
+          saveAsImage: { show: true }
+        }
+      },
+      legend: {
+        data: ['计算机科学与技术', '软件工程', '网络工程']
+      },
+      xAxis: [
+        {
+          type: 'category',
+          data: ['2018', '2019', '2020', '2021', '2022', '2023', '2024'],
+          axisPointer: {
+            type: 'shadow'
+          }
+        }
+      ],
+      yAxis: [
+        {
+          type: 'value',
+          name: '计算机科学与技术',
+          min: 0,
+          max: 250,
+          interval: 50,
+          axisLabel: {
+            formatter: '{value}'
+          }
+        },
+        {
+          type: 'value',
+          name: '网络工程',
+          min: 0,
+          max: 25,
+          interval: 5,
+          axisLabel: {
+            formatter: '{value}'
+          }
+        }
+      ],
+      series: [
+        {
+          name: '软件工程',
+          type: 'bar',
+          tooltip: {
+            valueFormatter: function (value) {
+              return value + ' ';
+            }
+          },
+          data: [
+            13, 15, 17, 23, 26, 78, 135, 162, 32, 20, 6, 10
+          ]
+        },
+        {
+          name: '计算机科学与技术',
+          type: 'bar',
+          tooltip: {
+            valueFormatter: function (value) {
+              return value + ' ';
+            }
+          },
+          data: [16, 19, 21, 28, 35, 85, 155, 180, 42, 40, 16, 15]
+        },
+        {
+          name: '网络工程',
+          type: 'line',
+          yAxisIndex: 1,
+          tooltip: {
+            valueFormatter: function (value) {
+              return value + ' ';
+            }
+          },
+          data: [23, 17, 21, 33, 40, 88, 195, 152, 22, 18, 16, 20]
+        }
+      ]
+    };
+
+    option3 && myChart3.setOption(option3);
+
+
+
+
+
+    // echarts 窗口缩放自适应
+    window.onresize = function () {
+      myChart.resize();
+      myChart2.resize();
+      myChart3.resize();
+    }
+
+  });
+</script>
+</body>
+</html>
